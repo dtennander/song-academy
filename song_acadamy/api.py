@@ -1,32 +1,44 @@
-import json
+from flask import url_for, jsonify
 
 from song_acadamy import app, questions, storage
+
+
+@app.route("/api")
+def get_api_root():
+    return jsonify({
+        "description": 'The API provided for song_academy. To reach an individual item go to endpoint/id',
+        "endpoints": {
+            "questions": url_for("get_questions", _external=True),
+            "songs": url_for("get_songs", _external=True),
+            "results": url_for("get_results", _external=True)
+        },
+    })
 
 
 @app.route("/api/questions")
 def get_questions():
     q = {item["id"]: item["question"] for item in questions.get_questions()}
-    return json.dumps(q)
+    return jsonify(q)
 
 
 @app.route("/api/questions/<question_id>")
 def get_question_by_id(question_id):
-    return json.dumps(next(item for item in questions.get_questions() if item["id"] == int(question_id)))
+    return jsonify(next(item for item in questions.get_questions() if item["id"] == int(question_id)))
 
 
 @app.route("/api/songs")
 def get_songs():
     songs = {i: questions.get_song_name(i) for i in range(1, 10)}
-    return json.dumps(songs)
+    return jsonify(songs)
 
 
 @app.route("/api/songs/<table_id>")
 def get_songs_by_id(table_id):
     id = int(table_id)
-    return json.dumps({"id": id, "song": questions.get_song_name(id)})
+    return jsonify({"id": id, "song": questions.get_song_name(id)})
 
 
 @app.route("/api/results")
 def get_results():
     responses = [storage.get_table_responses(i) for i in range(1, 10)]
-    return json.dumps(responses)
+    return jsonify(responses)
