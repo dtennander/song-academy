@@ -1,0 +1,1 @@
+from song_acadamy.app import app

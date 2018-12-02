@@ -1,0 +1,108 @@
+h1 {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#table-layout {
+    align-content: center;
+    margin: auto;
+    padding: 10px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+}
+
+button {
+    margin: 1%;
+    width: 30%;
+    height: 10vw;
+    background: #f14100;
+    box-shadow: 0 8px 8px 2px rgba(176,176,176,1);
+    border-radius: 10px;
+    border: none;
+    font-weight: bolder;
+    color: #400006;
+    font-size: 1em;
+}
+
+button:hover {
+    box-shadow: 0 1px 2px 2px rgba(176,176,176,1);
+    transform: translateY(4px)
+}
+
+#submit-button {
+    margin-top: 15%;
+    background: #f14100;
+    box-shadow: 0 8px 8px 2px rgba(176,176,176,1);
+    border-radius: 5px;
+    border: none;
+    color: #400006;
+    width: 70%;
+    height: 10vw;
+}
+
+#submit-button:hover {
+    box-shadow: 0 1px 2px 2px rgba(176,176,176,1);
+    transform: translateY(4px)
+}
+
+#questions {
+    text-align: center;
+}
+
+#questions p {
+    font-size: 1em;
+}
+
+table {
+    width: 100%;
+}
+
+.slider {
+    width: 70%;
+    -webkit-appearance: none !important;
+    height:30px;
+    border-radius: 8px;
+    background:-webkit-gradient(linear,center top, center bottom, from(#eadcd8),to(#eadcd8),color-stop(50%, #eadcd8));
+    -webkit-transition: background 450ms;
+    transition: background 450ms;
+
+}
+
+/* Change the Slider Button Color Here */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: #ce2325;
+    height:45px;
+    width:45px;
+    border-radius: 25px;
+}
+
+#footer {
+     position: absolute;
+     left: 50%;
+     right: 50%;
+     bottom: 30px;
+     width: 500px;
+     margin-left: -250px;
+     margin-right: -250px;
+     z-index: -10;
+ }
+
+#snaps {
+    width: 150px;
+}
+
+#luva {
+    width: 100px;
+}

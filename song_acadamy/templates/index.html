@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snappsakademin - SP</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="style.css") }}">
+</head>
+<body>
+<h1 class="title">{{ title }}</h1>
+<div id="table-layout">
+    <table>
+        <tr><td>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=1) }}';">1</button>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=2) }}';">2</button>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=3) }}';">3</button>
+        </td></tr>        
+        <tr><td>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=4) }}';">4</button>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=5) }}';">5</button>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=6) }}';">6</button>
+        </td></tr>
+        <tr><td>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=7) }}';">7</button>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=8) }}';">8</button>
+            <button onclick="location.href='{{ url_for("get_questioner", table_id=9) }}';">9</button>
+        </td></tr>
+    </table>
+</div>
+<div id="footer">
+    <div>
+        <img id="luva" alt="Kårspexet" src="{{ url_for("static", filename="luva.svg") }}">
+    </div>
+    <div>
+        skapade
+    </div>
+    <div>
+        <img id="snaps" alt="Snaps akademin" src="{{ url_for("static", filename="logo.jpg") }}">
+    </div>
+</div>
+</body>
+</html>
