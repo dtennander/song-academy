@@ -42,3 +42,8 @@ def get_songs_by_id(table_id):
 def get_results():
     responses = [storage.get_table_responses(i) for i in range(1, 10)]
     return jsonify(responses)
+
+
+@app.route("/api/results/<table_id>")
+def get_result_by_id(table_id):
+    return jsonify(storage.get_table_responses(int(table_id)))
