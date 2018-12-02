@@ -10,6 +10,3 @@ app = Flask(
 
 import song_acadamy.views
 import song_acadamy.api
-
-if __name__ == '__main__':
-    app.run(port=8080)
