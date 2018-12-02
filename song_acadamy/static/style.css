@@ -71,10 +71,10 @@ table {
 
 .slider {
     width: 70%;
-    -webkit-appearance: none !important;
+    -webkit-appearance: none;
     height:30px;
     border-radius: 8px;
-    background:-webkit-gradient(linear,center top, center bottom, from(#eadcd8),to(#eadcd8),color-stop(50%, #eadcd8));
+    background: #eadcd8;
     -webkit-transition: background 450ms;
     transition: background 450ms;
 
@@ -82,7 +82,7 @@ table {
 
 /* Change the Slider Button Color Here */
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
+    -webkit-appearance: none;
     background: #ce2325;
     height:45px;
     width:45px;

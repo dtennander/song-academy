@@ -34,8 +34,8 @@ def get_songs():
 
 @app.route("/api/songs/<table_id>")
 def get_songs_by_id(table_id):
-    id = int(table_id)
-    return jsonify({"id": id, "song": questions.get_song_name(id)})
+    int_id = int(table_id)
+    return jsonify({"id": int_id, "song": questions.get_song_name(int_id)})
 
 
 @app.route("/api/results")

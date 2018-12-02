@@ -7,6 +7,9 @@ from song_acadamy import api, app
 
 class TestApi(TestCase):
 
+    def setUp(self):
+        app.config["SERVER_NAME"] = "test.se"
+
     @patch("song_acadamy.questions.get_questions")
     def test_get_questions(self, get_questions_mock):
         # Given
@@ -78,7 +81,7 @@ class TestApi(TestCase):
             {"id": 1, "responses": []}], result.get_json())
 
     @patch("song_acadamy.storage.get_table_responses")
-    def test_get_results(self, get_table_responses_mock):
+    def test_get_results_by_id(self, get_table_responses_mock):
         # Given
         get_table_responses_mock.return_value = {"id": 1, "responses": []}
         # When
@@ -86,3 +89,13 @@ class TestApi(TestCase):
             result = api.get_result_by_id(1)
         # Then
         self.assertEqual({"id": 1, "responses": []}, result.get_json())
+
+    def test_api_root(self):
+        # When
+        with app.app_context():
+            result = api.get_api_root()
+        # Then
+        endpoints = result.get_json()["endpoints"]
+        with app.test_client() as client:
+            for url in endpoints.values():
+                self.assertIsNotNone(client.get(url).get_json())
