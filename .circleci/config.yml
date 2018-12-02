@@ -32,6 +32,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
+            mkdir -p test-results/nosetests
             nosetests --with-xunit --xunit-file test-results/nosetests/result.xml
 
       - store_test_results:
