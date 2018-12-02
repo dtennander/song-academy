@@ -9,7 +9,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "requirements.txt" }}
+          - v1-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}
           - v1-dependencies-
       - run:
           name: install dependencies
@@ -17,18 +17,24 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            pip install -r requirements-dev.txt
       - save_cache:
           paths:
             - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+          key: v1-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}
       - run:
           name: run tests
           command: |
             . venv/bin/activate
             mkdir -p test-results/nosetests
-            nosetests --with-xunit --xunit-file test-results/nosetests/result.xml
+            nosetests --with-xunit --xunit-file test-results/nosetests/result.xml --with-coverage --cover-xml
       - store_test_results:
           path: test-results
+      - run:
+          name: upload test coverage
+          command: |
+            . venv/bin/activate
+            python-codacy-coverage -r coverage.xml
   deploy:
     docker:
       - image: circleci/python:3.6.1
@@ -38,7 +44,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-dependencies-{{ checksum "requirements.txt" }}-{{ checksum "requirements-dev.txt" }}
             - v1-dependencies-
       - run:
           name: install dependencies
