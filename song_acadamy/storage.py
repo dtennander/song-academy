@@ -1,6 +1,6 @@
 import boto3
 
-table = boto3.resource('dynamodb').Table('song_academy_responses')
+table = boto3.resource('dynamodb', region_name="eu-central-1").Table('song_academy_responses')
 
 
 def save_response(table_id, form):

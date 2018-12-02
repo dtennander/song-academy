@@ -10,7 +10,7 @@ table_name = "song_academy_responses"
 
 @mock_dynamodb2
 class TestStorage(TestCase):
-    conn = boto3.resource("dynamodb")
+    conn = boto3.resource("dynamodb", region_name="eu-central-1")
 
     def setUp(self) -> None:
         self.conn.create_table(

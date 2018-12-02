@@ -32,9 +32,9 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            nosetests --with-xunit
+            nosetests --with-xunit --xunit-file test-results/nosetests/result.xml
 
-      - store_artifacts:
-          path: nosetests.xml
-          destination: test-reports
+      - store_test_results:
+          path: test-results
+
           
