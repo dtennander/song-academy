@@ -11,8 +11,8 @@ class TestQuestions(TestCase):
         q = qs[0]
         # Then
         self.assertEqual(len(qs), 3)
-        self.assertIsNotNone(q["id"])
-        self.assertIsNotNone(q["question"])
+        self.assertEqual(int, type(q["id"]))
+        self.assertEqual(str, type(q["question"]))
 
     def test_get_song_name(self):
         # Given

@@ -1,6 +1,6 @@
 {
     "dev": {
-        "app_function": "song_acadamy.app.app",
+        "app_function": "song_acadamy.app",
         "profile_name": null,
         "project_name": "song-acadamy",
         "runtime": "python3.6",
@@ -9,7 +9,7 @@
         "domain": "dev.song.tennander.se"
     },
     "production": {
-        "app_function": "song_acadamy.app.app",
+        "app_function": "song_acadamy.app",
         "profile_name": null,
         "project_name": "song-acadamy",
         "runtime": "python3.6",

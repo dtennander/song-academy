@@ -6,7 +6,7 @@ resource_dir = os.path.join(root_dir, 'resources')
 
 
 def get_questions() -> [dict]:
-    return [{"id": k, "question": v} for k, v in load_json("questions.json").items()]
+    return [{"id": int(k), "question": v} for k, v in load_json("questions.json").items()]
 
 
 def get_song_name(table_id: int) -> str:

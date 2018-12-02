@@ -21,11 +21,11 @@ class TestApi(TestCase):
     def test_get_question_by_id(self, get_questions_mock):
         # Given
         the_question = "?"
-        get_questions_mock.return_value = [{"id": "1", "question": the_question}]
+        get_questions_mock.return_value = [{"id": 1, "question": the_question}]
         # When
         result = api.get_question_by_id("1")
         # Then
-        self.assertEqual('{"id": "1", "question": "?"}', result)
+        self.assertEqual('{"id": 1, "question": "?"}', result)
 
     @patch("song_acadamy.questions.get_song_name")
     def test_get_songs(self, get_song_name_mock):
@@ -52,7 +52,7 @@ class TestApi(TestCase):
         # When
         result = api.get_songs_by_id(1)
         # Then
-        self.assertEqual('"hej"', result)
+        self.assertEqual('{"id": 1, "song": "hej"}', result)
 
     @patch("song_acadamy.storage.get_table_responses")
     def test_get_results(self, get_table_responses_mock):
