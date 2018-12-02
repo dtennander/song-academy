@@ -5,7 +5,7 @@
         "project_name": "song-acadamy",
         "runtime": "python3.6",
         "s3_bucket": "zappa-song-acadamy-dev",
-        "region": "eu-central-1",
+        "aws_region": "eu-central-1",
         "domain": "dev.song.tennander.se"
     },
     "production": {
@@ -14,7 +14,7 @@
         "project_name": "song-acadamy",
         "runtime": "python3.6",
         "s3_bucket": "zappa-song-acadamy-production",
-        "region": "eu-central-1",
+        "aws_region": "eu-central-1",
         "domain": "song.tennander.se"
     }
 }
