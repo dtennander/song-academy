@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Snappsakademin - SP</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="style.css") }}">
-</head>
-<body>
+{% extends "base.html" %}
+{% block page %}
 <h1>Tack för ditt svar!</h1>
-<div id="footer">
-    <div>
-        <img id="luva" alt="Kårspexet" src="{{ url_for("static", filename="luva.svg") }}">
-    </div>
-    <div>
-        skapade
-    </div>
-    <div>
-        <img id="snaps" alt="Snaps akademin" src="{{ url_for("static", filename="logo.jpg") }}">
-    </div>
-</div>
-</body>
-</html>
+{% endblock %}

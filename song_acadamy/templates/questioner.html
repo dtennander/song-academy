@@ -1,34 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Snappsakademin - SP</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="style.css") }}">
-</head>
-<body>
-    <h1 class="title">{{song_title}}</h1>
-    <form id="questions" method="post">
-        {% for question in questions %}
-            <p>{{ question.question }}</p>
-            <input class="slider" name="{{ question.id }}" type="range" min="0" max="10">
-        {% endfor %}
-        <div>
-            <button id="submit-button" type="submit">Lämna in!</button>
-        </div>
-    </form>
-    <div id="footer">
-        <div>
-            <img id="luva" alt="Kårspexet" src="{{ url_for("static", filename="luva.svg") }}">
-        </div>
-        <div>
-            skapade
-        </div>
-        <div>
-            <img id="snaps" alt="Snaps akademin" src="{{ url_for("static", filename="logo.jpg") }}">
-        </div>
+{% extends "base.html" %}
+{% block page %}
+<h1 class="title">{{song_title}}</h1>
+<form id="questions" method="post">
+    {% for question in questions %}
+        <p>{{ question.question }}</p>
+        <input class="slider" name="{{ question.id }}" type="range" min="0" max="10">
+    {% endfor %}
+    <div>
+        <button id="submit-button" type="submit">Lämna in!</button>
     </div>
-
-    <script type="text/javascript" src="{{ url_for("static", filename="slider.js") }}"></script>
-    <script type="text/javascript" src="{{ url_for("static", filename="jquery.js") }}"></script>
-</body>
-</html>
+</form>
+<script type="text/javascript" src="{{ url_for("static", filename="slider.js") }}"></script>
+<script type="text/javascript" src="{{ url_for("static", filename="jquery.js") }}"></script>
+{% endblock %}

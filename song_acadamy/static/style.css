@@ -32,7 +32,7 @@ button {
     border: none;
     font-weight: bolder;
     color: #400006;
-    font-size: 1em;
+    font-size: 2em;
 }
 
 button:hover {
@@ -49,6 +49,7 @@ button:hover {
     color: #400006;
     width: 70%;
     height: 10vw;
+    font-size: 2em;
 }
 
 #submit-button:hover {
@@ -89,15 +90,20 @@ table {
 }
 
 #footer {
-     position: absolute;
-     left: 50%;
-     right: 50%;
-     bottom: 30px;
-     width: 500px;
-     margin-left: -250px;
-     margin-right: -250px;
-     z-index: -10;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 30px;
+    width: 500px;
+    margin-left: -250px;
+    margin-right: -250px;
+    z-index: -10;
  }
+
+#footer a, a:visited {
+    color: black;
+    text-decoration: none;
+}
 
 #snaps {
     width: 150px;
