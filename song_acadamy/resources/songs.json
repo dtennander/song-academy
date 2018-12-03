@@ -1,11 +1,38 @@
 {
-  "1": "Alla tallarna",
-  "2": "Helan",
-  "3": "Tänk om",
-  "4": "Getingen",
-  "5": "Imberlupet",
-  "6": "Tomtegubbar",
-  "7": "Bellmans 21",
-  "8": "Alla tallarna",
-  "9": "Portos visa"
+  "1": {
+    "name": "Alla tallarna",
+    "lyrics": "Alla tallarna, alla tallarna,\nAlla stora , alla små,\nAlla tallarna, alla tallarna\nSka vi koka ’rännvin på.\nAlla tallarna, alla tallarna,\nifrån roten till dess topp,\nalla tallarna, alla tallarna,\nska vi ta och ’ricka opp."
+  },
+  "2": {
+    "name": "Helan Går",
+    "lyrics": "Helan går\nSjung hopp faderallan lallan lej\nHelan går\nSjung hopp faderallan lej\nOch den som inte helan tar* \nHan heller inte halvan får\nHelan går\n(Drink)\nSjung hopp faderallan lej"
+  },
+  "3": {
+    "name": "Tänk om jag hade lilla nubben",
+    "lyrics": "Tänk om jag hade lilla nubben på ett snöre i halsen.\nTänk om jag hade lilla nubben på ett snöre i halsen.\nJag skulle dra den upp och ner,\nså att den kändes som många fler.\nTänk om jag hade lilla nubben på ett snöre i halsen."
+  },
+  "4": {
+    "name": "Getingen",
+    "lyrics": "Och så kommer det en geting\ngenom luften som ett reaplan.\nOch ger dig en liten snyting\nmitt under röda kran.\nOch så åker han i magen\nmed ett litet plask,\nlitet plask, litet plask.\nOch så blir man lite dragen,\nmen pigg och rask,\npigg och rask, pigg och rask."
+  },
+  "5": {
+    "name": "Imberlupet",
+    "lyrics": "Imbelupet glaset står på bräcklig fot,\nljumma starkölsflaskor luta sig därmot,\nmen därnere, miserere, uti magens labyrint,\nirrar djävulen i väntan på en kvint.\n\nImbelupet glaset står på bräcklig fot,\nglömda folkölsburkar luta sig därmot,\nmen därnere, miserere, uti magens slingerväxt,\nsitter själve fan och väntar på en sext.\n\nImbelupet glaset står på bräcklig fot,\nkalla pilsnerhalvor luta sig därmot,\nmen därnere, miserere, sitter allas våran far\ndet är fan och han vill ha det som är kvar!"
+  },
+  "6": {
+    "name": "Tomtegubbar",
+    "lyrics": "Hej, tomtegubbar, slå i glasen och låt oss lustiga vara!\nHej, tomtegubbar, slå i glasen och låt oss lustiga vara!\nEn liten tid vi leva här, med mycket möda och stort besvär.\nHej, tomtegubbar, slå i glasen och låt oss lustiga vara!"
+  },
+  "7": {
+    "name": "Bellmans 21",
+    "lyrics": "Lyft ditt välförsedda glas, \ndet är en ljuvlig börda! \nNu har grabbarna kalas, \ni morgon är det lördag \n||: Dingedingedinge dingedingedinge \nDingedingedinge ding dong dong \nVi segern snart skall skörda :|| "
+  },
+  "8": {
+    "name": "Alla tallarna",
+    "lyrics": "Alla tallarna, alla tallarna,\nAlla stora , alla små,\nAlla tallarna, alla tallarna\nSka vi koka ’rännvin på.\nAlla tallarna, alla tallarna,\nifrån roten till dess topp,\nalla tallarna, alla tallarna,\nska vi ta och ’ricka opp."
+  },
+  "9": {
+    "name": "Portos visa",
+    "lyrics": "Jag vill börja gasqua,\nvar fan är min flaska?\nVem i helvete stal min butelj?\nSkall törsten mig tvinga\nen TT börja svinga?\nNej, för fan, bara blunda och svälj.\nVilken smörja!\nFår jag spörja:\n\"Vem, för fan, tror att jag är en älg?\"\nTill England vi rider,\noch sedan vad det lider\nträffar vi välan på någon pub.\nOch där skall vi festa,\nblott dricka av det bästa\nutav whisky och portvin.\nJag tänker gå hårt in\nför att pröva på rubb och stubb."
+  }
 }

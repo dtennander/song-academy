@@ -9,8 +9,12 @@ def get_questions() -> [dict]:
     return [{"id": int(k), "question": v} for k, v in load_json("questions.json").items()]
 
 
-def get_song_name(table_id: int) -> str:
-    return load_json("songs.json")[str(table_id)]
+def get_song_name(song_id: int) -> str:
+    return load_json("songs.json")[str(song_id)]["name"]
+
+
+def get_song_lyrics(song_id: int) -> str:
+    return load_json("songs.json")[str(song_id)]["lyrics"]
 
 
 def load_json(file_name):

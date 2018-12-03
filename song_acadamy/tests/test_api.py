@@ -32,34 +32,40 @@ class TestApi(TestCase):
         # Then
         self.assertEqual({"id": 1, "question": "?"}, result.get_json())
 
+    @patch("song_acadamy.questions.get_song_lyrics")
     @patch("song_acadamy.questions.get_song_name")
-    def test_get_songs(self, get_song_name_mock):
+    def test_get_songs(self, get_song_name_mock, get_song_lyrics_mock):
         # Given
         get_song_name_mock.return_value = "hej"
+        get_song_lyrics_mock.return_value = "boll"
+        expected_rsp = {str(i): {
+            "name": "hej",
+            "lyrics": "boll"
+        } for i in range(1, 10)}
         # When
         with app.app_context():
             result = api.get_songs()
         # Then
-        self.assertEqual(
-            {"1": "hej",
-             "2": "hej",
-             "3": "hej",
-             "4": "hej",
-             "5": "hej",
-             "6": "hej",
-             "7": "hej",
-             "8": "hej",
-             "9": "hej"}, result.get_json())
+        self.assertEqual(expected_rsp, result.get_json())
 
+    @patch("song_acadamy.questions.get_song_lyrics")
     @patch("song_acadamy.questions.get_song_name")
-    def test_get_song_by_id(self, get_song_name_mock):
+    def test_get_song_by_id(self, get_song_name_mock, get_song_lyrics_mock):
         # Given
         get_song_name_mock.return_value = "hej"
+        get_song_lyrics_mock.return_value = "boll"
         # When
         with app.app_context():
             result = api.get_songs_by_id(1)
         # Then
-        self.assertEqual({"id": 1, "song": "hej"}, result.get_json())
+        self.assertEqual(
+            {
+                "id": 1,
+                "song": {
+                    "name": "hej",
+                    "lyrics": "boll"
+                }
+            }, result.get_json())
 
     @patch("song_acadamy.storage.get_table_responses")
     def test_get_results(self, get_table_responses_mock):
