@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block page %}
+    <h1>{{ song_title }}</h1>
+    <div id="lyrics-container">
+        <p id="lyrics">{{ lyrics }}</p>
+    </div>
+    <button onclick="location.href='{{ url_for("get_questioner", table_id=song_id) }}';">
+        Till Frågorna!
+    </button>
+{% endblock %}

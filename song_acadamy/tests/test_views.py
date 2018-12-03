@@ -14,6 +14,7 @@ class TestViews(TestCase):
         with app.app_context():
             page = endpoint()
         self.assertIsNotNone(page)
+        return page
 
     def test_get_page(self):
         self.verify_rendering(views.get_page)
@@ -35,3 +36,12 @@ class TestViews(TestCase):
         song_mock.return_value = "Hej"
         questions_mock.return_value = [{"id": 1, "question": "vad?"}]
         self.verify_rendering(lambda: views.get_questioner(1))
+
+    @patch("song_acadamy.questions.get_song_name")
+    @patch("song_acadamy.questions.get_song_lyrics")
+    def test_get_song(self, song_mock, lyrics_mock):
+        song_mock.return_value = "Hej"
+        lyrics_mock.return_value = "song lyrics"
+        page = self.verify_rendering(lambda: views.get_song(1))
+        self.assertTrue("song lyrics" in page)
+        self.assertTrue("Hej" in page)
