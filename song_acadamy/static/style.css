@@ -61,10 +61,6 @@ button:hover {
     text-align: center;
 }
 
-#questions p {
-    font-size: 1em;
-}
-
 table {
     width: 100%;
 }
@@ -111,4 +107,25 @@ table {
 
 #luva {
     width: 100px;
+}
+
+p {
+    text-align: center;
+    font-size: 36pt;
+}
+
+#lyrics-container {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+#lyrics {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+    background: white;
+    box-shadow: 0 8px 8px 4px rgba(176,176,176,1);
+    padding: 25px 35px;
+    border-radius: 25px;
 }
