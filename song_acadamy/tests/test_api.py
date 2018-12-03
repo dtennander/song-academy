@@ -90,7 +90,10 @@ class TestApi(TestCase):
         # Then
         self.assertEqual({"id": 1, "responses": []}, result.get_json())
 
-    def test_api_root(self):
+    @patch("song_acadamy.storage.get_table_responses")
+    def test_api_root(self, get_table_responses_mock):
+        # Given
+        get_table_responses_mock.return_value = {"id": 1, "responses": []}
         # When
         with app.app_context():
             result = api.get_api_root()
