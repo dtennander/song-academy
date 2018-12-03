@@ -28,14 +28,21 @@ def get_question_by_id(question_id):
 
 @app.route("/api/songs")
 def get_songs():
-    songs = {i: questions.get_song_name(i) for i in range(1, 10)}
+    songs = {i: {
+        "name": questions.get_song_name(i),
+        "lyrics": questions.get_song_lyrics(i)} for i in range(1, 10)}
     return jsonify(songs)
 
 
 @app.route("/api/songs/<table_id>")
 def get_songs_by_id(table_id):
     int_id = int(table_id)
-    return jsonify({"id": int_id, "song": questions.get_song_name(int_id)})
+    return jsonify({
+        "id": int_id,
+        "song": {
+            "name": questions.get_song_name(int_id),
+            "lyrics": questions.get_song_lyrics(int_id)
+        }})
 
 
 @app.route("/api/results")
