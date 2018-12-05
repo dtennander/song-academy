@@ -20,7 +20,8 @@ class TestViews(TestCase):
         self.verify_rendering(views.get_page)
 
     def test_get_result(self):
-        self.verify_rendering(views.get_result)
+        with app.test_request_context():
+            self.verify_rendering(views.get_result)
 
     @patch("song_acadamy.storage.save_response")
     def test_post_question_result(self, save_mock):

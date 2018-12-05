@@ -1,6 +1,6 @@
-from flask import render_template, request
+from flask import render_template, request, send_from_directory
 
-from song_acadamy import app, questions, storage
+from song_acadamy import app, questions, storage, result_folder
 
 
 @app.route("/")
@@ -17,7 +17,12 @@ def get_song(song_id):
 
 @app.route("/result")
 def get_result():
-    return render_template("result.html")
+    return send_from_directory(result_folder, "index.html")
+
+
+@app.route("/result/<path:path>")
+def get_result_statics(path):
+    return send_from_directory(result_folder, path)
 
 
 @app.route("/questions/<table_id>", methods=["POST"])
