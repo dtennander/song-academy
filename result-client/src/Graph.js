@@ -1,6 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
-import { scaleLinear, scaleOrdinal } from 'd3-scale';
-import { schemeCategory10, schemeDark2, schemeSet1 } from 'd3-scale-chromatic';
+import React from 'react';
+import {scaleLinear, scaleOrdinal} from 'd3-scale';
+import {schemeCategory10} from 'd3-scale-chromatic';
 
 const Graph = ({size, data, qIndex}) => {
   const padding = size/10;
